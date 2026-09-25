@@ -3,7 +3,7 @@ resource "azurerm_resource_group" "this" { #my-rf is the refrence block
   #kyn-project-dev-rg-gopal
   #variable "resource_group_name" it will pick up the default value
   location = var.location
-  tags     = var.tags
+ # tags     = var.tags
 }
 
 
@@ -14,7 +14,7 @@ resource "azurerm_virtual_network" "this" {
   location            = azurerm_resource_group.this.location
   resource_group_name = azurerm_resource_group.this.name
   address_space       = var.vnet_address_space
-  tags                = var.tags
+ # tags                = var.tags
 }
 
 resource "azurerm_subnet" "web" {
