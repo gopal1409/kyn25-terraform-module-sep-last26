@@ -20,7 +20,7 @@ resource "azurerm_virtual_network" "this" {
 resource "azurerm_subnet" "web" {
   name                 = "${var.project_name}-${var.environment}-${var.resource_group_name}-web-subnet"
   resource_group_name  = azurerm_resource_group.this.name
-  virtual_network_name = azurerm_virtual_network.this
+  virtual_network_name = azurerm_virtual_network.this.id
   address_prefixes     = var.web_subnet_address
 
 }
